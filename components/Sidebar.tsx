@@ -4,6 +4,7 @@ import Image from 'next/image'
 import SidebarNoteList from './SidebarNoteList'
 import NoteListSkeleton from './NoteListSkeleton'
 import EditButton from '@/components/EditButton'
+import SidebarSearchField from '@/components/SidebarSearchField'
 
 import { getAllNotes } from '@/lib/redis'
 
@@ -26,7 +27,7 @@ export default async function Sidebar() {
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
-          {/* SideSearchField */}
+          <SidebarSearchField />
           <EditButton noteId={null}>New</EditButton>
         </section>
         <nav>

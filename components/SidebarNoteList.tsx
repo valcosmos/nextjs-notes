@@ -1,4 +1,5 @@
-import SidebarNoteItem from '@/components/SidebarNoteItem'
+import SidebarNoteItemHeader from './SidebarNoteItemHeader'
+import SidebarNoteListFilter from './SidebarNoteListFilter'
 
 interface SidebarNoteListProps {
   notes: Record<string, string>
@@ -16,16 +17,30 @@ export default async function NoteList({ notes }: SidebarNoteListProps) {
     )
   }
 
+  // return (
+  //   <ul className="notes-list">
+  //     {arr.map(([noteId, note]) => {
+  //       // const { title, updateTime } = JSON.parse(note) as NoteProps
+  //       return (
+  //         <li key={noteId}>
+  //           <SidebarNoteItem noteId={noteId} note={typeof JSON.parse(note) === 'string' ? JSON.parse(JSON.parse(note)) : JSON.parse(note)} />
+  //         </li>
+  //       )
+  //     })}
+  //   </ul>
+  // )
+
   return (
-    <ul className="notes-list">
-      {arr.map(([noteId, note]) => {
-        // const { title, updateTime } = JSON.parse(note) as NoteProps
-        return (
-          <li key={noteId}>
-            <SidebarNoteItem noteId={noteId} note={typeof JSON.parse(note) === 'string' ? JSON.parse(JSON.parse(note)) : JSON.parse(note)} />
-          </li>
-        )
-      })}
-    </ul>
+    <SidebarNoteListFilter notes={
+      Object.entries(notes).map(([noteId, note]) => {
+        const noteData = JSON.parse(note) as NoteProps
+        return {
+          noteId,
+          note: noteData,
+          header: <SidebarNoteItemHeader title={noteData.title} updateTime={noteData.updateTime} />,
+        }
+      })
+    }
+    />
   )
 }
