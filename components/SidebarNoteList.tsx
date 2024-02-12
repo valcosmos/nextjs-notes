@@ -5,8 +5,8 @@ interface SidebarNoteListProps {
 }
 
 export default async function NoteList({ notes }: SidebarNoteListProps) {
-  const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
-  await sleep(2000)
+  // const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
+  // await sleep(1000)
   const arr = Object.entries(notes)
   if (arr.length === 0) {
     return (

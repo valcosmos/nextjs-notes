@@ -13,8 +13,8 @@ export default async function Page({ params }: PageProps) {
   const note = await getNote(noteId)
 
   // 为了让 Suspense 的效果更明显
-  const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
-  await sleep(2000)
+  // const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
+  // await sleep(1000)
 
   if (note == null) {
     return (
