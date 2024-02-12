@@ -1,12 +1,12 @@
-'use client'
-
-import dayjs from 'dayjs'
+import SidebarNoteItem from '@/components/SidebarNoteItem'
 
 interface SidebarNoteListProps {
   notes: Record<string, string>
 }
 
-export default function NoteList({ notes }: SidebarNoteListProps) {
+export default async function NoteList({ notes }: SidebarNoteListProps) {
+  const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
+  await sleep(2000)
   const arr = Object.entries(notes)
   if (arr.length === 0) {
     return (
@@ -19,13 +19,10 @@ export default function NoteList({ notes }: SidebarNoteListProps) {
   return (
     <ul className="notes-list">
       {arr.map(([noteId, note]) => {
-        const { title, updateTime } = JSON.parse(note) as NoteProps
+        // const { title, updateTime } = JSON.parse(note) as NoteProps
         return (
           <li key={noteId}>
-            <header className="sidebar-note-header">
-              <strong>{title}</strong>
-              <small>{dayjs(updateTime).format('YYYY-MM-DD hh:mm:ss')}</small>
-            </header>
+            <SidebarNoteItem noteId={noteId} note={JSON.parse(note)} />
           </li>
         )
       })}
