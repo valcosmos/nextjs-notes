@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react'
 import { useEffect, useRef, useState, useTransition } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 interface SidebarNoteContentProps {
   id: string
@@ -74,15 +75,15 @@ export default function SidebarNoteContent({ id, title, children, expandedChildr
       >
         {isExpanded
           ? (
-            <img
+            <Image
               src="/chevron-down.svg"
-              width="10px"
-              height="10px"
+              width={10}
+              height={10}
               alt="Collapse"
             />
             )
           : (
-            <img src="/chevron-up.svg" width="10px" height="10px" alt="Expand" />
+            <Image src="/chevron-up.svg" width={10} height={10} alt="Expand" />
             )}
       </button>
       {isExpanded && expandedChildren}

@@ -1,5 +1,4 @@
 import { marked } from 'marked'
-import type { ReactNode } from 'react'
 import sanitizeHtml from 'sanitize-html'
 
 interface NotePreviewProps {
@@ -20,13 +19,13 @@ const allowedAttributes = Object.assign(
   },
 )
 
-export default async function NotePreview({ children }: NotePreviewProps) {
+export default function NotePreview({ children }: NotePreviewProps) {
   return (
     <div className="note-preview">
       <div
         className="text-with-markdown"
         dangerouslySetInnerHTML={{
-          __html: sanitizeHtml(await marked(children || ''), {
+          __html: sanitizeHtml(marked(children || '') as string, {
             allowedTags,
             allowedAttributes,
           }),

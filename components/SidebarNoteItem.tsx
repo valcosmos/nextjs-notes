@@ -8,6 +8,7 @@ interface SidebarNoteItemProps {
 
 export default function SidebarNoteItem({ noteId, note }: SidebarNoteItemProps) {
   const { title, content = '', updateTime } = note
+
   return (
     <SidebarNoteItemContent
       id={noteId}

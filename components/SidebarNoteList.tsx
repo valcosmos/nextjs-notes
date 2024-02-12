@@ -22,7 +22,7 @@ export default async function NoteList({ notes }: SidebarNoteListProps) {
         // const { title, updateTime } = JSON.parse(note) as NoteProps
         return (
           <li key={noteId}>
-            <SidebarNoteItem noteId={noteId} note={JSON.parse(note)} />
+            <SidebarNoteItem noteId={noteId} note={typeof JSON.parse(note) === 'string' ? JSON.parse(JSON.parse(note)) : JSON.parse(note)} />
           </li>
         )
       })}
