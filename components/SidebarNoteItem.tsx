@@ -15,7 +15,7 @@ export default function SidebarNoteItem({ noteId, note }: SidebarNoteItemProps) 
       title={note.title}
       expandedChildren={(
         <p className="sidebar-note-excerpt">
-          {content.substring(0, 20) || <i>(No content)</i>}
+          {content?.substring(0, 20) || <i>(No content)</i>}
         </p>
       )}
     >

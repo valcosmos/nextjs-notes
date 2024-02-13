@@ -1,7 +1,6 @@
 'use client'
 
-import type { ChangeEventHandler } from 'react'
-import React, { Suspense, useRef, useTransition } from 'react'
+import React, { useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useFormStatus } from 'react-dom'
 import { importNote } from '@/actions'

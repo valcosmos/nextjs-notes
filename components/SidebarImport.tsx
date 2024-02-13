@@ -1,7 +1,7 @@
 'use client'
 
 import type { ChangeEventHandler } from 'react'
-import React, { Suspense, useTransition } from 'react'
+import React, { useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function SidebarImport() {

@@ -39,5 +39,8 @@
     "jsonc",
     "yaml",
     "toml"
+  ],
+  "i18n-ally.localesPaths": [
+    "messages"
   ]
 }

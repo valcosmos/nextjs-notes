@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Sidebar from '@/components/Sidebar'
 import './style.css'
+import Header from '@/components/Header'
 
 type LayoutProps = Readonly<{ children: React.ReactNode, params: { locale: string } }>
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children, params: { locale } }: LayoutProps
     <html lang={locale}>
       <body className={inter.className}>
         <div className="container">
+          <Header />
           <div className="main">
             <Sidebar />
             <section className="col note-viewer">{children}</section>
