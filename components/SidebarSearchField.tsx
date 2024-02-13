@@ -3,6 +3,10 @@
 import { usePathname, useRouter } from 'next/navigation'
 import { useTransition } from 'react'
 
+interface SidebarSearchFieldProps {
+  search: string
+}
+
 function Spinner({ active = true }) {
   return (
     <div
@@ -13,7 +17,7 @@ function Spinner({ active = true }) {
   )
 }
 
-export default function SidebarSearchField() {
+export default function SidebarSearchField({ search }: SidebarSearchFieldProps) {
   const { replace } = useRouter()
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()
@@ -37,7 +41,7 @@ export default function SidebarSearchField() {
       </label>
       <input
         id="sidebar-search-input"
-        placeholder="Search"
+        placeholder={search}
         type="text"
         onChange={e => handleSearch(e.target.value)}
       />

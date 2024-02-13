@@ -6,7 +6,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/actions": ["./app/[locale]/actions.tsx"]
     },
     "resolveJsonModule": true,
     "allowJs": true,

@@ -1,13 +1,16 @@
 import SidebarNoteItemHeader from './SidebarNoteItemHeader'
 import SidebarNoteListFilter from './SidebarNoteListFilter'
+import { getAllNotes } from '@/lib/redis'
 
-interface SidebarNoteListProps {
-  notes: Record<string, string>
-}
+// interface SidebarNoteListProps {
+//   notes: Record<string, string>
+// }
 
-export default async function NoteList({ notes }: SidebarNoteListProps) {
+export default async function NoteList() {
   // const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
   // await sleep(1000)
+  const notes = await getAllNotes()
+
   const arr = Object.entries(notes)
   if (arr.length === 0) {
     return (
