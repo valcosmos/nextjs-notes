@@ -14,6 +14,9 @@ dependencies:
   marked:
     specifier: ^11.1.1
     version: 11.1.1
+  mime:
+    specifier: ^3.0.0
+    version: 3.0.0
   next:
     specifier: 14.1.0
     version: 14.1.0(react-dom@18.2.0)(react@18.2.0)
@@ -37,6 +40,9 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^2.6.4
     version: 2.6.4(@vue/compiler-sfc@3.4.18)(eslint@8.56.0)(typescript@5.3.3)
+  '@types/mime':
+    specifier: ^3.0.4
+    version: 3.0.4
   '@types/node':
     specifier: ^20
     version: 20.11.17
@@ -608,6 +614,10 @@ packages:
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
     dependencies:
       '@types/unist': 2.0.10
+    dev: true
+
+  /@types/mime@3.0.4:
+    resolution: {integrity: sha512-iJt33IQnVRkqeqC7PzBHPTC6fDlRNRW8vjrgqtScAhrmMwe8c4Eo7+fUGTa+XdWrpEgpyKWMYmi2dIwMAYRzPw==}
     dev: true
 
   /@types/node@20.11.17:
@@ -3059,6 +3069,12 @@ packages:
       braces: 3.0.2
       picomatch: 2.3.1
     dev: true
+
+  /mime@3.0.0:
+    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    dev: false
 
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}

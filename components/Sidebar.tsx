@@ -4,8 +4,10 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import SidebarNoteList from './SidebarNoteList'
 import NoteListSkeleton from './NoteListSkeleton'
+import SidebarImport from './SidebarImport'
 import EditButton from '@/components/EditButton'
 import SidebarSearchField from '@/components/SidebarSearchField'
+import SidebarImportWithServerActions from '@/components/SidebarImportWithServerActions'
 
 export default function Sidebar() {
   const t = useTranslations('Basic')
@@ -37,6 +39,8 @@ export default function Sidebar() {
             <SidebarNoteList />
           </Suspense>
         </nav>
+        <SidebarImport />
+        <SidebarImportWithServerActions />
       </section>
     </>
   )
