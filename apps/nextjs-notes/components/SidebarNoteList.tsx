@@ -1,6 +1,9 @@
 import SidebarNoteItemHeader from './SidebarNoteItemHeader'
 import SidebarNoteListFilter from './SidebarNoteListFilter'
-import { getAllNotes } from '@/lib/redis'
+
+import { getAllNotes } from '@/lib/strapi'
+
+// import { getAllNotes } from '@/lib/strapi'
 
 // interface SidebarNoteListProps {
 //   notes: Record<string, string>

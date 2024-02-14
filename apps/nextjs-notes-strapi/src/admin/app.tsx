@@ -25,11 +25,12 @@ export default {
       // 'tr',
       // 'uk',
       // 'vi',
-      // 'zh-Hans',
+      'zh-Hans',
       // 'zh',
     ],
   },
-  // bootstrap(app: any) {
-  // console.log(app)
-  // },
+  bootstrap(app: any) {
+    // eslint-disable-next-line no-console
+    console.log(app)
+  },
 }

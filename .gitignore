@@ -37,3 +37,4 @@ next-env.d.ts
 redis-data
 .env
 .turbo
+apps/nextjs-notes-strapi/types

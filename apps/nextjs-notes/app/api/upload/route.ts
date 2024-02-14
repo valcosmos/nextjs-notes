@@ -6,7 +6,10 @@ import { NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 import mime from 'mime'
 import dayjs from 'dayjs'
-import { addNote } from '@/lib/redis'
+
+import { addNote } from '@/lib/strapi'
+
+// import { addNote } from '@/lib/strapi'
 
 export async function POST(request: Request) {
   // 获取 formData

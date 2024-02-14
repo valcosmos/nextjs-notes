@@ -9,7 +9,10 @@ import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 import mime from 'mime'
 import dayjs from 'dayjs'
-import { addNote, delNote, updateNote } from '@/lib/redis'
+
+import { addNote, delNote, updateNote } from '@/lib/strapi'
+
+// import { addNote, delNote, updateNote } from '@/lib/strapi'
 
 const schema = z.object({
   title: z.string(),
@@ -24,7 +27,7 @@ export async function saveNote(prevState: NoteEditStateProps, formData: FormData
   const data: NoteProps = {
     title: formData.get('title') as string,
     content: formData.get('body') as string,
-    updateTime: new Date().toString(),
+    updateTime: new Date().toISOString(),
   }
 
   // 校验数据
