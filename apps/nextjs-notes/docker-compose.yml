@@ -6,3 +6,21 @@ services:
     volumes:
       - ./redis-data:/data
     command: redis-server --appendonly yes --requirepass root123456
+  mysql:
+    image: mysql:latest # 使用最新稳定版的 MySQL 镜像
+    environment:
+      MYSQL_DATABASE: nextjs-notes-strapi
+      MYSQL_ROOT_PASSWORD: '123456'
+      MYSQL_USER: notes # 要创建的用户
+      MYSQL_PASSWORD: '123456' # 上述用户的密码
+    ports:
+      - '3306:3306' # 映射端口
+    command:
+      - --default_authentication_plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --explicit_defaults_for_timestamp=true
+    volumes:
+      - ./mysql-data/config:/etc/mysql/my.cnf
+      - ./mysql-data/data/:/var/lib/mysql/
+      - ./mysql-data/entrypoint/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
