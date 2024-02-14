@@ -10,9 +10,9 @@ import { z } from 'zod'
 import mime from 'mime'
 import dayjs from 'dayjs'
 
-import { addNote, delNote, updateNote } from '@/lib/strapi'
+import { addNote, delNote, updateNote } from '@/lib/prisma'
 
-// import { addNote, delNote, updateNote } from '@/lib/strapi'
+// import { addNote, delNote, updateNote } from '@/lib/prisma'
 
 const schema = z.object({
   title: z.string(),

@@ -1,8 +1,8 @@
 import NoteEditor from '@/components/NoteEditor'
 
-import { getNote } from '@/lib/strapi'
+import { getNote } from '@/lib/prisma'
 
-// import { getNote } from '@/lib/strapi'
+// import { getNote } from '@/lib/prisma'
 
 interface EditPageProps {
   params: {

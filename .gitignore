@@ -38,3 +38,4 @@ redis-data
 .env
 .turbo
 apps/nextjs-notes-strapi/types
+migrations

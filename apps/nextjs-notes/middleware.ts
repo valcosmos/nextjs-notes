@@ -15,6 +15,7 @@ const nextIntlMiddleware = createMiddleware({
 
 export default function middleware(req: NextRequest) {
   const excludePattern = `^(/(${locales.join('|')}))?(/api/auth/?.*?|/auth/signin)$`
+  // const excludePattern = `^(/(${locales.join('|')}))?/api/auth/?.*?$`
   const publicPathnameRegex = RegExp(excludePattern, 'i')
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname)
 
